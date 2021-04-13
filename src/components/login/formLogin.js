@@ -12,7 +12,7 @@ const FormLogin = ({Submit, logState, LogOut}) => {
         return(
             <div>
                 <p>Welcome !</p>
-                <Button onClick={LogOut()}>Log Out</Button>
+                <Button onClick={LogOut}>Log Out</Button>
             </div>
         )
     }

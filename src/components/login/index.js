@@ -13,8 +13,10 @@ const Login = () => {
     const dispatch = useDispatch()
 
     const CallEasyLoginApi = (loginForm, history, setErrorMsg) => {
-        axios({
-            method: 'POST',
+        axios.post({
+            header: {
+                "Access-Control-Allow-Origin": "*"
+            },
             url: 'https://easy-login-api.herokuapp.com/users/login',
             data: {
                 username: loginForm.login,
@@ -44,10 +46,12 @@ const Login = () => {
             CallEasyLoginApi(loginForm, history, setErrorMsg)
         }
     }
+
+    const FLogOut = () => dispatch(LogOut());
     
     return (
         <LoginContainer>
-            <FormLogin onSubmit={ Submit } logState={ logState } LogOut={ dispatch(LogOut()) } ></FormLogin>
+            <FormLogin onSubmit={ Submit } logState={ logState } LogOut={ FLogOut } ></FormLogin>
         </LoginContainer>
     )
 }

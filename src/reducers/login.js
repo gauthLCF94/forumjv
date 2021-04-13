@@ -2,7 +2,7 @@
 import { LOGIN, LOGOUT } from '../actions/login'
 
 const initialState = {
-    logStatus: false
+    logStatus: true
 }
 
 export default (state = initialState, action) => {

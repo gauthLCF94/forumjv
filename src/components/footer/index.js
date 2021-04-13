@@ -1,11 +1,13 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import styled from 'styled-components'
 
 const Footer = () => {
     return(
         <SFooter>
-            <p>Ceci est une imitation du forum <Forum href="https://www.jeuxvideo.com/">Jeuxvideos.com</Forum> réalisé dans un but d'apprentissage de ReactJS</p>
+            <p>Ceci est une imitation du forum <Forum><Link to="https://www.jeuxvideo.com/">Jeuxvideos.com</Link></Forum> réalisé dans un but d'apprentissage de ReactJS</p>
         </SFooter>
     )
 }
@@ -23,6 +25,6 @@ const SFooter = styled.footer`
     padding-top: 0.15em;
     margin-bottom: -50px;
 `
-const Forum = styled.a`
+const Forum = styled.span`
     color: ${ props => props.theme.orange };
 `
